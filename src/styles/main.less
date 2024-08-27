@@ -1,0 +1,133 @@
+@import 'maps.less';
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+@breakpointDesktop: ~"(min-width: 1024px)";
+
+.marginBottom8 { //mixin
+    margin-bottom: 0.5em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #colors[bgColor];
+    color: #colors[textColor];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 50vw;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media @breakpointDesktop {
+        height: 100vh;
+    }
+
+
+    @media @breakpointTablet {
+        height: 100vh;
+        max-width: 70vw;
+    }
+
+    @media @breakpointMobile {
+        padding: 16px 0;
+        max-width: 80vw;
+    }
+}
+
+header {
+    padding-bottom: 1em;
+
+    .profile-avatar {
+        display: block;
+        margin: 0 auto 1em;
+        border-radius: 50%;
+        height: 96px;
+    }
+
+    .profile-bio {
+        text-align: center;
+        .marginBottom8();
+
+        &-name {
+            font-size: 24px;
+            .marginBottom8();
+        }
+
+        &-subt {
+            font-size: 18px;
+            .marginBottom8();
+        }
+
+        &-description {
+            font-size: 14px;
+            opacity: 80%;
+        }
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 240px;
+    width: 100%;
+
+    li {
+
+        img {
+            transition: all ease 0.3s;
+
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.projects-list {
+    margin-top: 32px;
+
+    h2 {
+        text-align: center;
+        font-size: 18px;
+        text-decoration: underline;
+        margin-bottom: 0.5em;
+    }
+
+    &-item {
+        a {
+            text-decoration: none;
+            background-color: #colors[btnColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #colors[textColor];
+            font-weight: bold;
+            border-radius: 32px;
+            border: 2px solid #colors[btnColor];
+            transition: all ease 0.3s;
+
+            &:hover {
+                color: #colors[btnColor];
+                background-color: transparent;
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+
